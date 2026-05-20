@@ -724,3 +724,149 @@ body {
   font-size: 13px;
   color: var(--vv-gray);
 }
+
+/* ── Responsive Utilities ────────────────────────────────── */
+
+/* Hero carousel slides */
+.hero-slide-img {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+.hero-slide-row {
+  min-height: 500px;
+}
+.hero-slide-product-img {
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Product detail page image */
+.product-detail-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Reusable section heading */
+.section-heading {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--vv-dark);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+/* Mobile filter toggle button */
+.filter-toggle-btn {
+  display: none;
+  border: 1.5px solid var(--vv-dark);
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  background: var(--vv-white);
+  color: var(--vv-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-toggle-btn:hover {
+  background: var(--vv-dark);
+  color: var(--vv-white);
+}
+
+/* Order status timeline scroll wrapper */
+.order-status-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.order-status-inner {
+  min-width: 480px;
+}
+
+/* ── Tablet (≤991px) ─────────────────────────────────────── */
+@media (max-width: 991px) {
+  .hero-slide-img    { height: 380px; }
+  .hero-slide-row    { min-height: 380px; }
+  .hero-slide-product-img { max-height: 380px; }
+  .product-detail-img { height: 400px; }
+  .custom-carousel-content h1 { font-size: 2.2rem; }
+}
+
+/* ── Mobile (≤767px) ─────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Hero */
+  .hero-slide-img    { height: 260px; }
+  .hero-slide-row    { min-height: 280px; }
+  .hero-slide-product-img { max-height: 260px; }
+  .custom-carousel-content h1  { font-size: 1.75rem; margin-bottom: 12px; }
+  .custom-carousel-content p   { font-size: 13px; margin-bottom: 18px; }
+  .btn-slider { padding: 8px 18px; font-size: 11px; }
+
+  /* Product images */
+  .product-card .product-card-img img        { height: 220px; }
+  .category-card .category-card-img,
+  .category-card .category-card-img img      { height: 180px; }
+
+  /* Product detail */
+  .product-detail-img { height: 320px; }
+
+  /* Section heading */
+  .section-heading { font-size: 20px; }
+
+  /* Filter toggle visible on mobile */
+  .filter-toggle-btn { display: flex; }
+
+  /* Cart product name can wrap */
+  .shopping-cart .cart-item .product-name { white-space: normal; }
+
+  /* Summary boxes */
+  .cart-summary-box       { padding: 16px; }
+  .checkout-summary-box   { padding: 16px; }
+
+  /* Checkout place order full width */
+  .checkout .place-order-btn { width: 100%; padding: 13px; }
+}
+
+/* ── Small mobile (≤575px) ───────────────────────────────── */
+@media (max-width: 575px) {
+  /* Hero */
+  .hero-slide-img    { height: 220px; }
+  .hero-slide-row    { min-height: 240px; }
+  .hero-slide-product-img { max-height: 200px; }
+  .custom-carousel-content h1  { font-size: 1.4rem; margin-bottom: 8px; }
+  .custom-carousel-content p   { font-size: 12px; margin-bottom: 14px; }
+  .btn-slider { padding: 7px 14px; font-size: 10px; letter-spacing: 1px; }
+
+  /* Product images */
+  .product-card .product-card-img img        { height: 180px; }
+  .category-card .category-card-img,
+  .category-card .category-card-img img      { height: 150px; }
+
+  /* Product detail */
+  .product-detail-img { height: 260px; }
+
+  /* Section heading */
+  .section-heading { font-size: 18px; }
+
+  /* Page title bar */
+  .page-title-bar { padding: 18px 0 14px; }
+
+  /* Qty group controls */
+  .product-view .qty-group .qty-btn   { padding: 8px 10px; }
+  .product-view .qty-group .qty-input { width: 40px; }
+
+  /* Product action buttons stack */
+  .product-view .btn1 { width: 100%; margin-right: 0; margin-bottom: 8px; }
+
+  /* Search empty state */
+  .search-empty { padding: 40px 20px !important; }
+
+  /* Empty state less padding on small screens */
+  .empty-state { padding: 40px 16px; }
+}

@@ -11,9 +11,7 @@
     <div class="mb-5">
       <p class="section-title mb-1">Discover</p>
       <div class="section-divider mb-0"></div>
-      <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-        @if ($query) Search Results @else Search @endif
-      </p>
+      <p class="section-heading mb-0 mt-2">@if ($query) Search Results @else Search @endif</p>
       @if ($query)
         <p style="font-size:13px;color:#6b7280;margin-top:6px;">
           {{ $products->total() }} result(s) for &ldquo;{{ $query }}&rdquo;
@@ -35,13 +33,13 @@
     </form>
 
     @if (!$query)
-      <div style="border:1.5px solid #e8e8e8;padding:60px;text-align:center;">
+      <div class="search-empty" style="border:1.5px solid #e8e8e8;padding:60px;text-align:center;">
         <i class="fa fa-search fa-2x d-block mb-3" style="color:#e8e8e8;"></i>
         <p style="font-size:14px;color:#6b7280;">Type something above to search for products.</p>
       </div>
 
     @elseif ($products->isEmpty())
-      <div style="border:1.5px solid #e8e8e8;padding:60px;text-align:center;">
+      <div class="search-empty" style="border:1.5px solid #e8e8e8;padding:60px;text-align:center;">
         <i class="fa fa-inbox fa-2x d-block mb-3" style="color:#e8e8e8;"></i>
         <p style="font-size:14px;color:#6b7280;margin-bottom:16px;">
           No products found for &ldquo;{{ $query }}&rdquo;.

@@ -11,9 +11,7 @@
     <div class="mb-5">
       <p class="section-title mb-1">Welcome back</p>
       <div class="section-divider mb-0"></div>
-      <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-        {{ Auth::user()->name }}
-      </p>
+      <p class="section-heading mb-0 mt-2">{{ Auth::user()->name }}</p>
     </div>
 
     @if (session('status'))
@@ -112,7 +110,7 @@
                 default                                   => ['bg-warning',   'text-warning'],
               };
             @endphp
-            <div style="padding:16px 24px;border-bottom:1px solid #f0f0f0;" class="d-flex justify-content-between align-items-center">
+            <div style="padding:16px 24px;border-bottom:1px solid #f0f0f0;" class="d-flex justify-content-between align-items-center flex-wrap gap-2">
               <div>
                 <p style="font-family:monospace;font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">
                   {{ $order->tracking_no }}

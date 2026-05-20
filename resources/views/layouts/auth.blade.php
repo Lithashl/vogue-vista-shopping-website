@@ -15,12 +15,13 @@
     html, body { height: 100%; margin: 0; }
     body { font-family: 'Nunito', sans-serif; background: #fff; }
 
+    /* ── Outer wrapper ── */
     .auth-wrap {
       display: flex;
       min-height: 100vh;
     }
 
-    /* ── Left panel ── */
+    /* ── Left brand panel (desktop) ── */
     .auth-panel {
       flex: 0 0 42%;
       background: #1a1a1a;
@@ -45,8 +46,10 @@
       color: #fff;
       letter-spacing: 1px;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .auth-brand:hover { color: #e8e8e8; }
+
     .auth-panel-quote {
       flex: 1;
       display: flex;
@@ -86,16 +89,51 @@
       font-size: 12px;
       color: rgba(255,255,255,0.3);
       letter-spacing: 0.5px;
+      flex-shrink: 0;
     }
+
+    /* ── Mobile top header strip (hidden on desktop) ── */
+    .auth-mobile-header {
+      display: none;
+      background: #1a1a1a;
+      padding: 14px 20px;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      width: 100%;
+    }
+    .auth-mobile-header-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .auth-mobile-header-brand:hover { color: #e8e8e8; }
+    .auth-mobile-back {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+    .auth-mobile-back:hover { color: #fff; }
 
     /* ── Right form area ── */
     .auth-form-area {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 48px 40px;
       background: #fff;
+      min-width: 0;
     }
     .auth-form-inner {
       width: 100%;
@@ -114,7 +152,7 @@
       margin-bottom: 32px;
     }
 
-    /* Inputs */
+    /* ── Inputs ── */
     .auth-input-group { margin-bottom: 20px; }
     .auth-label {
       display: block;
@@ -138,7 +176,7 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    .auth-input:focus { border-color: #1a1a1a; }
+    .auth-input:focus  { border-color: #1a1a1a; }
     .auth-input.is-invalid { border-color: #dc2626; }
     .auth-error {
       font-size: 12px;
@@ -146,7 +184,7 @@
       margin-top: 5px;
     }
 
-    /* Checkbox */
+    /* ── Checkbox ── */
     .auth-check-wrap {
       display: flex;
       align-items: center;
@@ -167,7 +205,7 @@
       margin: 0;
     }
 
-    /* Submit button */
+    /* ── Submit button ── */
     .auth-btn {
       display: block;
       width: 100%;
@@ -184,27 +222,26 @@
       transition: background 0.2s;
       font-family: 'Nunito', sans-serif;
     }
-    .auth-btn:hover { background: #333; }
+    .auth-btn:hover    { background: #333; }
     .auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    /* Divider */
+    /* ── Divider ── */
     .auth-divider {
       display: flex;
       align-items: center;
       gap: 12px;
       margin: 24px 0;
-      color: #e8e8e8;
-      font-size: 12px;
     }
-    .auth-divider::before, .auth-divider::after {
+    .auth-divider::before,
+    .auth-divider::after {
       content: '';
       flex: 1;
       height: 1px;
       background: #e8e8e8;
     }
-    .auth-divider span { color: #9ca3af; white-space: nowrap; }
+    .auth-divider span { font-size: 12px; color: #9ca3af; white-space: nowrap; }
 
-    /* Links */
+    /* ── Links ── */
     .auth-link-row {
       text-align: center;
       font-size: 13px;
@@ -220,7 +257,7 @@
     }
     .auth-link-row a:hover { color: #444; border-color: #444; }
 
-    /* Forgot link */
+    /* ── Forgot password ── */
     .auth-forgot {
       font-size: 12px;
       color: #6b7280;
@@ -230,7 +267,7 @@
     }
     .auth-forgot:hover { color: #1a1a1a; border-color: #1a1a1a; }
 
-    /* Alert */
+    /* ── Alert banners ── */
     .auth-alert-success {
       background: #f0fdf4;
       border: 1.5px solid #bbf7d0;
@@ -248,36 +285,50 @@
       margin-bottom: 24px;
     }
 
-    /* Mobile: hide left panel, show mini brand header */
-    .auth-mobile-brand {
-      display: none;
-      text-align: center;
-      padding: 28px 24px 0;
-    }
-    .auth-mobile-brand a {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      text-decoration: none;
+    /* ── Tablet (≤1024px): slim panel ── */
+    @media (max-width: 1024px) {
+      .auth-panel {
+        flex: 0 0 38%;
+        padding: 40px 40px;
+      }
+      .auth-panel-quote blockquote { font-size: 24px; }
+      .auth-form-area { padding: 40px 32px; }
     }
 
+    /* ── Mobile (≤768px): stack layout ── */
     @media (max-width: 768px) {
-      .auth-panel { display: none; }
-      .auth-mobile-brand { display: block; }
-      .auth-wrap { flex-direction: column; }
+      .auth-wrap        { flex-direction: column; }
+      .auth-panel       { display: none; }
+      .auth-mobile-header { display: flex; }
       .auth-form-area {
-        padding: 28px 24px 48px;
-        align-items: flex-start;
+        flex: 1;
+        justify-content: flex-start;
+        padding: 32px 24px 48px;
+        align-items: stretch;
       }
-      .auth-form-title { font-size: 26px; }
+      .auth-form-inner  { max-width: 100%; }
+      .auth-form-title  { font-size: 26px; }
+      .auth-form-sub    { margin-bottom: 24px; }
+    }
+
+    /* ── Small phone (≤480px) ── */
+    @media (max-width: 480px) {
+      .auth-mobile-header        { padding: 12px 16px; }
+      .auth-mobile-header-brand  { font-size: 18px; }
+      .auth-form-area   { padding: 24px 16px 40px; }
+      .auth-form-title  { font-size: 22px; }
+      .auth-form-sub    { font-size: 12px; margin-bottom: 20px; }
+      .auth-input       { padding: 10px 12px; font-size: 13px; }
+      .auth-input-group { margin-bottom: 16px; }
+      .auth-btn         { padding: 12px; }
+      .auth-check-wrap  { margin-bottom: 18px; }
     }
   </style>
 </head>
 <body>
   <div class="auth-wrap">
 
-    {{-- Left brand panel --}}
+    {{-- ── Left brand panel (desktop only) ── --}}
     <div class="auth-panel">
       <a href="/" class="auth-brand">VogueVista</a>
       <div class="auth-panel-quote">
@@ -289,11 +340,17 @@
       <div class="auth-panel-footer">&copy; {{ date('Y') }} VogueVista. All rights reserved.</div>
     </div>
 
-    {{-- Right form area --}}
+    {{-- ── Mobile top header (hidden on desktop) ── --}}
+    <div class="auth-mobile-header">
+      <a href="/" class="auth-mobile-header-brand">VogueVista</a>
+      <a href="/" class="auth-mobile-back">
+        <i class="fa fa-arrow-left"></i>
+        Back to shop
+      </a>
+    </div>
+
+    {{-- ── Form area ── --}}
     <div class="auth-form-area">
-      <div class="auth-mobile-brand">
-        <a href="/">VogueVista</a>
-      </div>
       <div class="auth-form-inner">
         @yield('form-content')
       </div>

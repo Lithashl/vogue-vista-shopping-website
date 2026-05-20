@@ -25,8 +25,7 @@
         <div class="col-md-5">
           <div style="overflow:hidden;background:#f7f7f7;">
             <img src="{{ asset('uploads/products/' . $product->image) }}"
-                 class="w-100"
-                 style="height:500px;object-fit:cover;display:block;"
+                 class="product-detail-img"
                  alt="{{ $product->product_name }}">
           </div>
         </div>

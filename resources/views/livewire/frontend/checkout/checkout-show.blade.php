@@ -6,9 +6,7 @@
       <div class="mb-5">
         <p class="section-title mb-1">Almost There</p>
         <div class="section-divider mb-0"></div>
-        <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-          Checkout
-        </p>
+        <p class="section-heading mb-0 mt-2">Checkout</p>
       </div>
 
       {{-- Flash --}}

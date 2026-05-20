@@ -8,9 +8,7 @@
   <div class="container">
 
     <div class="mb-4">
-      <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-        All Categories
-      </p>
+      <p class="section-heading mb-0 mt-2">All Categories</p>
       <div class="section-divider mb-0"></div>
       
     </div>

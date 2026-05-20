@@ -14,8 +14,8 @@
         {{-- Split layout for nj.png --}}
         <div class="carousel-item {{ $key === 0 ? 'active' : '' }}" style="background-color: #d4a8d8;">
           <div class="container">
-            <div class="row align-items-center" style="min-height: 500px;">
-              <div class="col-md-6 py-5 custom-carousel-content">
+            <div class="row align-items-center hero-slide-row">
+              <div class="col-md-6 py-4 py-md-5 custom-carousel-content">
                 <p class="mb-2" style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#555;">
                   New Collection
                 </p>
@@ -24,10 +24,9 @@
                 <a href="/collections" class="btn-slider me-2">Shop Now</a>
                 <a href="/collections" class="btn-slider" style="background:transparent;color:#1a1a1a;">Explore</a>
               </div>
-              <div class="col-md-6 text-end d-flex align-items-end justify-content-end">
+              <div class="col-md-6 text-center text-md-end d-flex align-items-end justify-content-center justify-content-md-end">
                 <img src="{{ asset('uploads/sliders/nj.png') }}"
-                     class="img-fluid"
-                     style="max-height: 500px; object-fit: contain;"
+                     class="img-fluid hero-slide-product-img"
                      alt="{{ $sliderItem->title }}">
               </div>
             </div>
@@ -38,8 +37,7 @@
         {{-- Full-screen slide --}}
         <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
           <img src="{{ asset('uploads/sliders/' . $sliderItem->image) }}"
-               class="d-block w-100"
-               style="height: 500px; object-fit: cover;"
+               class="d-block hero-slide-img"
                alt="{{ $sliderItem->title }}">
         </div>
       @endif
@@ -48,8 +46,8 @@
       {{-- Fallback when no sliders --}}
       <div class="carousel-item active" style="background-color: #d4a8d8;">
         <div class="container">
-          <div class="row align-items-center" style="min-height: 500px;">
-            <div class="col-md-6 py-5 custom-carousel-content">
+          <div class="row align-items-center hero-slide-row">
+            <div class="col-md-6 py-4 py-md-5 custom-carousel-content">
               <p class="mb-2" style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#555;">
                 New Collection
               </p>
@@ -103,9 +101,7 @@
       <div>
         <p class="section-title mb-1">Browse</p>
         <div class="section-divider mb-0"></div>
-        <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-          Shop by Category
-        </p>
+        <p class="section-heading mb-0 mt-2">Shop by Category</p>
       </div>
       <a href="/collections" class="text-dark fw-bold" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:2px;">
         View All
@@ -139,9 +135,7 @@
       <div>
         <p class="section-title mb-1">Curated for you</p>
         <div class="section-divider mb-0"></div>
-        <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-          Featured Products
-        </p>
+        <p class="section-heading mb-0 mt-2">Featured Products</p>
       </div>
       <a href="/collections" class="text-dark fw-bold" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:2px;">
         View All

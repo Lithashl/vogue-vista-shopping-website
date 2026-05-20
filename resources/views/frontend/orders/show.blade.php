@@ -12,9 +12,7 @@
       <div>
         <p class="section-title mb-1">Account</p>
         <div class="section-divider mb-0"></div>
-        <p class="mb-1 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-          Order Detail
-        </p>
+        <p class="section-heading mb-1 mt-2">Order Detail</p>
         <p style="font-size:13px;color:#6b7280;margin-bottom:0;">
           Placed on {{ $order->created_at->format('d F Y, H:i') }}
         </p>
@@ -80,6 +78,8 @@
 
       @else
         {{-- Progress bar --}}
+        <div class="order-status-scroll">
+        <div class="order-status-inner">
         <div class="d-flex align-items-center" style="position:relative;">
           @foreach ($stages as $i => $stage)
             @php
@@ -121,6 +121,8 @@
             @endif
 
           @endforeach
+        </div>
+        </div>
         </div>
       @endif
     </div>

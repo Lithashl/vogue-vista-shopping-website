@@ -7,9 +7,7 @@
         <div>
           <p class="section-title mb-1">Shopping</p>
           <div class="section-divider mb-0"></div>
-          <p class="mb-0 mt-2" style="font-size:22px;font-weight:800;color:#1a1a1a;font-family:'Playfair Display',serif;">
-            My Cart
-          </p>
+          <p class="section-heading mb-0 mt-2">My Cart</p>
         </div>
         <a href="/collections" style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#1a1a1a;text-decoration:none;border-bottom:2px solid #1a1a1a;padding-bottom:2px;">
           Continue Shopping
